@@ -1,10 +1,6 @@
 package org.example;
 
-import dev.langchain4j.model.chat.ChatLanguageModel;
-import dev.langchain4j.model.ollama.OllamaChatModel;
-
 import java.util.ArrayList;
-import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

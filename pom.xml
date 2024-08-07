@@ -31,7 +31,6 @@
             <artifactId>langchain4j-core</artifactId>
             <version>0.33.0</version>
         </dependency>
-
     </dependencies>
 
     <properties>

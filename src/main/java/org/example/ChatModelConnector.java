@@ -11,6 +11,7 @@ public class ChatModelConnector {
         return OllamaChatModel.builder()
                 .baseUrl(LOCALHOST)
                 .modelName(modelName)
+                .temperature(0.0)
                 .build();
     }
 
