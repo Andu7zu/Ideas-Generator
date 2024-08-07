@@ -42,7 +42,6 @@ public class Main {
                     """;
             for(ApiData data : apiData){
                 userPrompt += "\n" + data.toString();
-                System.out.println(data.toString());
             }
 
             String response = model.generate(userPrompt);
