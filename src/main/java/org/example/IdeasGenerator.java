@@ -16,13 +16,7 @@ public class IdeasGenerator {
 
     }
 
-    public static void main(String[] args) {
-        IdeasGenerator ideasGen = new IdeasGenerator();
-        ideasGen.readAndStoreFile();
-        ideasGen.pickRandomApis();
-    }
-
-    void readAndStoreFile(){
+    protected void readAndStoreFile(){
 
         int index = 0;
 
@@ -40,7 +34,7 @@ public class IdeasGenerator {
         }
     }
 
-    ArrayList<ApiData> pickRandomApis(){
+    protected ArrayList<ApiData> pickRandomApis(){
         Random rand = new Random();
         ArrayList<ApiData> apis = new ArrayList<>();
         ArrayList<Integer> chosenIndexes = new ArrayList<>();
@@ -63,24 +57,6 @@ public class IdeasGenerator {
 
 }
 
-class ApiData {
-
-    String name;
-    String description;
-    String url;
-
-    public ApiData(String name,  String url ,String description) {
-        this.name = name;
-        this.url = url;
-        this.description = description;
-
-    }
-
-    @Override
-    public String toString() {
-        return "Name: " + name + ", Url: " + url + ", Description: " + description;
-    }
-}
 
 
 

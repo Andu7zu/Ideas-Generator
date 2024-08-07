@@ -9,15 +9,14 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    // Ollama serve locally on port 11434
-    private static final String LOCALHOST = "http://localhost:11434";
 
     public static void main(String[] args) {
         IdeasGenerator ideasGenerator = new IdeasGenerator();
         ideasGenerator.readAndStoreFile();
+
         ArrayList<ApiData> apiData = ideasGenerator.pickRandomApis();
 
-        var model = connectModel("llama3");
+          var model = new ChatModelConnector().connectModel("llama3");
             String userPrompt = """
                     Generate 5 fun project ideas, combining 2-5 APIs from the list below. The ideas must be
                     suitable for a junior programmer and they should be formatted like this.
@@ -48,10 +47,5 @@ public class Main {
             System.out.printf("Response: %s%n", response);
 
     }
-    private static ChatLanguageModel connectModel(String modelName) {
-        return OllamaChatModel.builder()
-                .baseUrl(LOCALHOST)
-                .modelName(modelName)
-                .build();
-    }
+
 }
